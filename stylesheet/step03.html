@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*
+        .container{
+            background-color: tomato;
+        }
+        */
+
+        /* .container의 자손 중에서 p요소를 선택 */
+        /*
+        .container p{
+            background-color: tomato;
+        }
+        */
+
+        /* .container의 자식 중에서 p요소를 선택 */
+        /*
+        .container > p{
+            background-color: tomato;
+        }
+        */
+
+        /* .container의 형제 중에 바로 인접한 p요소 선택 */
+        /*
+        .container + p{
+            background-color: tomato;
+        }
+        */
+
+        /* .container의 형제 중에 모든 p요소 선택*/
+        /*
+        .container ~ p{
+            background-color: tomato;
+        }
+        */
+
+        /*
+        .container > div > p{
+            background-color: tomato;
+        }
+        */
+    </style>
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>CSS Selector</title>
+</head>
+<body>
+    <p>1Lorem ipsum dolor sit amet.</p>
+    <div class="container">
+        <p>2Lorem ipsum dolor sit amet.</p>
+        <div>
+            <p>3Lorem ipsum dolor sit amet.</p>
+        </div>
+        <p>4Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <p>5Lorem ipsum dolor sit amet.</p>
+    <p>6Lorem ipsum dolor sit amet.</p>
+    <p>7Lorem ipsum dolor sit amet.</p>
+    <p>8Lorem ipsum dolor sit amet.</p>
+</body>
+</html>
