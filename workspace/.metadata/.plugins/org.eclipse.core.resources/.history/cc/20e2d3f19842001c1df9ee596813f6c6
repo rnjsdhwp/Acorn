@@ -1,0 +1,17 @@
+package java03.Array;
+
+import java.util.Random;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		int [] nums = new int[10];
+		int i=0;
+		
+		for(int i=0; i<10; i++) {
+			nums[i] = i*i;
+		}
+
+	}
+
+}

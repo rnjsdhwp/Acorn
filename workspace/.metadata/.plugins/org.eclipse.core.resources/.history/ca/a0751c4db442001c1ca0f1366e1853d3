@@ -1,0 +1,9 @@
+package java04.application.Membership;
+// main외부에 변수를 선언할 경우 현재 클래스에 선언되어 있는 모든 메소드에서 사용할 수 있다.
+public class Ex00 {
+	static String [] names; 
+	public static void main(String[] args) {
+=		names=new String[10];
+	}
+=
+}

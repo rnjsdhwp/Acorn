@@ -1,0 +1,10 @@
+package java04.application.Membership;
+// 메소드 만들기
+// 1. 자주 사용되는 것들을 묶어서 메소드 이름으로 호출하여 사용
+public class Ex00 {
+	static String [] names; 
+	public static void main(String[] args) {
+=		names=new String[10];
+	}
+=
+}
