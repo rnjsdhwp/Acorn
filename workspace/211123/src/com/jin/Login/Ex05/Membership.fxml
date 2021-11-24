@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="236.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jin.Login.Ex05.MainCtrler">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <left>
+      <VBox prefHeight="45.0" prefWidth="334.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="idTxt" prefHeight="0.0" prefWidth="334.0" promptText="ID 입력">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="pwTxt" promptText="PW 입력">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="emailTxt" promptText="email 입력">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </padding>
+            </TextField>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <Button fx:id="okBtn" mnemonicParsing="false" text="회원가입" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </bottom>
+</BorderPane>
