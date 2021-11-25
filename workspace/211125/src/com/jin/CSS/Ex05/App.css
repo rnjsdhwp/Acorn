@@ -1,0 +1,24 @@
+#vbox1{
+	-fx-background-color:rgba(100,0,0,0.5);
+}
+#vbox2{
+	-fx-background-color:linear-gradient(to top, #000000, #ffffff);
+}
+#vbox3{
+	-fx-background-color:radial-gradient(center 20% 50%, radius 10%, #ffffff, #000000);
+}
+#vbox4{
+	-fx-border-color:skyblue;
+	-fx-background-image:url("img/icon.gif");
+}
+#vbox5{
+	-fx-border-color:skyblue;
+	-fx-background-image:url("img/icon.gif");
+	-fx-background-repeat:no-repeat;
+}
+#vbox5{
+	-fx-border-color:skyblue;
+	-fx-background-image:url("img/icon.gif");
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}

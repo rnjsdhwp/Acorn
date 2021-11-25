@@ -1,0 +1,16 @@
+/* label 전체에 적용 */
+Label{
+	-fx-padding:5;
+}
+
+/* #은 id를 의미하며 아이디가 lblId인 것만 적용 */
+#lblId{
+	-fx-background-color : black;
+	-fx-text-fill : yellow;	
+}
+
+/* .은 클래스를 의미하며 클래스가 lblClass인 것만 적용 */
+.lblClass{
+	-fx-background-color : blue;
+	-fx-text-fill : white;	
+}

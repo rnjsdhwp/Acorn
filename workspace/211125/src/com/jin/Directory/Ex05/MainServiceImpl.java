@@ -1,11 +1,22 @@
-package com.jin.Directory.Ex04;
+package com.jin.Directory.Ex05;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Popup;
 
 public class MainServiceImpl implements IMainService{
 
@@ -19,8 +30,6 @@ public class MainServiceImpl implements IMainService{
 				new ExtensionFilter("Audio Files", "*.wav", "*.mp3"),
 				new ExtensionFilter("All Files", "*.*"));
 		
-//		showOpenDialog에서 인자를 전달하면 전달된 인자에 종속된다.
-//		즉, fileOpen은 Stage에 묶여 fileopen이 종료될 때까지 Stage를 사용할 수 없게 된다.
 		File selectedFile =  fileChooser.showOpenDialog(s);
 		return selectedFile.getPath();
 	}
@@ -28,10 +37,28 @@ public class MainServiceImpl implements IMainService{
 	@Override
 	public String getDirPath() {
 		DirectoryChooser dirChooser = new DirectoryChooser();
-//		여기서는 전달된 인자가 null이므로 독립적으로 움직인다.
-//		즉, dirOpen과 stage는 별도의 프로그램으로 인식된다.
 		File selectedFile = dirChooser.showDialog(null);
 		return selectedFile.getPath();
+	}
+
+	@Override
+	public void PopWindow(Stage s) {
+//		팝업 생성
+		Popup pu = new Popup();
+//		fxml 연결
+		URL fxmlFile = getClass().getResource("Popup.fxml");
+		Node obj = null;
+		
+		try {
+			obj = FXMLLoader.load(fxmlFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		pu.getContent().add(obj);
+//		팝업 보여주기
+		pu.show(s);
+		return;
 	}
 
 }
