@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.fx.ide.jdt.ui.javafx"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.jst.ejb.ui"/>
 			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.oomph"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.debug.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.emf.codegen.ui.JETNewWizards"/>
+			<item value="org.eclipse.fx.ide"/>
+			<item value="org.eclipse.fx.ide/org.eclipse.fx.ide.clazz"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
+			<item value="org.eclipse.xtend.ide.wizards"/>
+			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.xtend.ui.Examples"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -25,6 +35,18 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211203.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211201.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211130.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211129.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211126.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211109.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211108.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211125.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211108.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211123.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211122.jar"/>
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211119.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211116.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\1235.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\123.jar"/>
@@ -33,8 +55,6 @@
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\mail.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\jinsMail.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211115.jar"/>
-			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211108.jar"/>
-			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211108.jar"/>
 		</list>
 	</section>
 </section>
