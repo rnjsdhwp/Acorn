@@ -10,7 +10,7 @@
         <!-- 전체 column(10) start -->
         <div class="col-lg-12">
 			<!--form start-->
-              <h6>회원가입</h6>
+              <h6>회원상세정보</h6>
               <form method="post" action="">
                 <div class="form-group">
                   <label for="email">이메일</label>
@@ -27,13 +27,10 @@
                 <div class="form-group">
                   <label for="phone">핸드폰</label>
                   <input type="tel" class="form-control" id="phone" name="phone">
-                </div>  
+                </div>
+                
+                <button type="submit" class="btn btn-primary">저장</button>
               </form>
-              
-              <div class="text-right">
-              	<a class="btn btn-outline-primary" href="">저장</a>
-              	<a class="btn btn-outline-secondary" href="listMember.jsp">회원리스트</a>
-              </div>
               <!--form end-->
           
           
