@@ -5,6 +5,7 @@
 
 <%@ include file="../inc/header.jsp" %>
     
+
     
     <!-- container start -->
     <div class="container">
@@ -61,12 +62,13 @@
 						int start = (cPage-1) * displayCount;
 						
 						ArrayList<MemberDTO> list = dao.select(start, displayCount);
-					
+						
+						int index = totalRows - (cPage-1)*displayCount;
 						for(int i=0; i<list.size(); i++){
 							MemberDTO dto = list.get(i);
 					%>
 					<tr>
-						<th scope="row"><%= i+1 %></th>
+						<th scope="row"><%= index-- %></th>
 						<td><%= dto.getEmail() %></td>
 						<td><%= dto.getName() %></td>
 						<td><%= dto.getPhone() %></td>
@@ -160,7 +162,7 @@
 			</nav>
 			
 			<div class="text-right">
-				<a class="btn btn-outline-secondary" href="joinMember.jsp">회원가입</a>
+				<a class="btn btn-outline-secondary" href="joinMember.jsp?page=<%=cPage%>">회원가입</a>
 			</div>
         </div>
         <!-- 전체 column(10) end -->

@@ -2,6 +2,18 @@
 
 <%@ include file="../inc/header.jsp" %>
     
+<%
+	String tempPage = request.getParameter("page");
+	if(tempPage == null || tempPage.length() == 0){
+		tempPage = "1";
+	}
+	int cPage = 0;
+	try{
+		cPage = Integer.parseInt(tempPage);
+	}catch(NumberFormatException e){
+		cPage = 1;
+	}
+%>
     
     <!-- container start -->
     <div class="container">
@@ -11,7 +23,7 @@
         <div class="col-lg-12">
 			<!--form start-->
               <h6>회원가입</h6>
-              <form method="post" action="">
+              <form method="post" action="saveMember.jsp" name="f">
                 <div class="form-group">
                   <label for="email">이메일</label>
                   <input type="email" class="form-control" id="email" name="email">
@@ -31,8 +43,8 @@
               </form>
               
               <div class="text-right">
-              	<a class="btn btn-outline-primary" href="">저장</a>
-              	<a class="btn btn-outline-secondary" href="listMember.jsp">회원리스트</a>
+              	<a class="btn btn-outline-primary" id="saveMember">저장</a>
+              	<a class="btn btn-outline-secondary" href="listMember.jsp?page=<%=cPage%>">회원리스트</a>
               </div>
               <!--form end-->
           
@@ -45,6 +57,13 @@
       <!-- 전체 row end -->
     </div>
     <!-- container end -->
+    <script>
     
+	    $(function(){
+	    	$("#saveMember").click(function(){
+	   			f.submit();
+	   		});
+	    });
+    </script>
     
 <%@ include file="../inc/footer.jsp" %>
