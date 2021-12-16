@@ -22,7 +22,7 @@
         <!-- 전체 column(10) start -->
         <div class="col-lg-12">
 			<!--form start-->
-              <h6>회원가입</h6>
+              <h4>회원가입</h4>
               <form method="post" action="saveMember.jsp" name="f">
                 <div class="form-group">
                   <label for="email">이메일</label>

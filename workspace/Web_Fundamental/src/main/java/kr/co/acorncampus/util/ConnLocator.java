@@ -9,7 +9,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class ConnLocator {
-	public static Connection getConnection() {
+	public static Connection getConnection() throws SQLException {
 		//DataSource를 이용하여 Connection 객체를 생성하면 2가지 이점이 있음
 		//1. 드라이브로드와 DriverManager 역할을 대신한다.
 		//2. Connection Pool를 사용한다.
@@ -25,11 +25,7 @@ public class ConnLocator {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} 
 		return con;
-		
 	}
 }

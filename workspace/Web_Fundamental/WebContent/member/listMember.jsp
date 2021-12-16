@@ -13,7 +13,7 @@
       <div class="row">
         <!-- 전체 column(10) start -->
         <div class="col-lg-12">
-			<h3>회원리스트</h3>
+			<h4>회원리스트</h4>
 			<table class="table table-hover">
 				<thead>
 			    	<tr>
@@ -22,6 +22,7 @@
 						<th scope="col">이름</th>
 						<th scope="col">핸드폰</th>
 						<th scope="col">가입날짜</th>
+						<th scope="col">수정</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -69,10 +70,11 @@
 					%>
 					<tr>
 						<th scope="row"><%= index-- %></th>
-						<td><%= dto.getEmail() %></td>
+						<td><a href="viewMember.jsp?email=<%=dto.getEmail()%>&page=<%=cPage%>"><%= dto.getEmail() %></a></td>
 						<td><%= dto.getName() %></td>
 						<td><%= dto.getPhone() %></td>
 						<td><%= dto.getRegdate() %></td>
+						<td><a class="btn btn-info" href="javascript:changePwd('<%=dto.getEmail()%>','<%=cPage%>')">비번수정</a></td>
 					</tr>
 				    <%} %>
 				</tbody>
@@ -165,13 +167,16 @@
 				<a class="btn btn-outline-secondary" href="joinMember.jsp?page=<%=cPage%>">회원가입</a>
 			</div>
         </div>
-        <!-- 전체 column(10) end -->
-
-        
+        <!-- 전체 column(12) end -->
       </div>
       <!-- 전체 row end -->
     </div>
     <!-- container end -->
     
+    <script>
+    	function changePwd(email, cpage){
+    		location.href="pwdMember.jsp?email="+email+"&page="+cpage;
+    	}
+    </script>
     
 <%@ include file="../inc/footer.jsp" %>
