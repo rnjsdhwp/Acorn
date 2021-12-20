@@ -1,6 +1,11 @@
+<%@page import="kr.co.acorncampus.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
+<%
+	MemberDTO memberDto  = (MemberDTO)session.getAttribute("member");
+	String uri = request.getRequestURI();
+	
+%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     
-    <title>Hello, world!</title>
+    <title></title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" 
@@ -27,9 +32,54 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-          <li class="nav-item active">
-            <a class="nav-link"  href="#">회원가입 <span class="sr-only">(current)</span></a>
+          <li class="nav-item <%if(uri != null && uri.startsWith("/member")){%> active <%}%>">
+            <a class="nav-link"  href="/member/listMember.jsp?page=1">회원관리 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item <%if(uri != null && uri.startsWith("/shorten")){%> active <%}%>">
+            <a class="nav-link"  href="/shorten/index.jsp">Shorten URL <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
+      <div>
+      	<span class="navbar-text">
+      		<%if(memberDto == null){ %>
+      		<a href="/member/login.jsp">로그인</a> | 
+      		<a href="/member/joinMember.jsp">회원가입</a>
+      		<%}else{ %>
+      		<%=memberDto.getName() %>님 안녕하세요 
+      		[<span id="sessionTime"></span>] | 
+      		<a href="/member/logout.jsp">로그아웃</a>
+      		<%} %>
+      	</span>
+      </div>
     </nav>
+    <script>
+    	let time = <%=session.getMaxInactiveInterval()%>;
+    	let minute = "";
+    	let second = "";
+    	
+    	minute = parseInt(time/60);
+		second = time%60;
+    	$("#sessionTime").html(minute+"분"+second+"초");
+    	
+    	const x = setInterval(function(){
+    		time--;
+    		minute = parseInt(time/60);
+    		second = time%60;
+    		$("#sessionTime").html(minute+"분"+second+"초");
+    		if(time<0){
+    			clearInterval(x);
+    			location.href="/member/login.jsp";
+    		}
+    	},1000);
+    	
+		$(function(){
+    		$("title").text($(".container .row .col-lg-12 h4").text());
+    	});
+    	
+    </script>
+    
+    
+    
+    
+	
