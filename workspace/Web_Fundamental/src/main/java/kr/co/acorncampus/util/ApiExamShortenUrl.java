@@ -19,8 +19,8 @@ import org.json.simple.parser.ParseException;
 public class ApiExamShortenUrl {
 
 	public static String getUrl(String originalURL) {
-		String clientId = ""; // 애플리케이션 클라이언트 아이디값"
-		String clientSecret = ""; // 애플리케이션 클라이언트 시크릿값"
+		String clientId = "YOUR_CLIENT_ID"; // 애플리케이션 클라이언트 아이디값"
+		String clientSecret = "YOUR_CLIENT_SECRET"; // 애플리케이션 클라이언트 시크릿값"
 
 		//String originalURL = "https://developers.naver.com/notice";
 		String apiURL = "https://openapi.naver.com/v1/util/shorturl?url=" + originalURL;
