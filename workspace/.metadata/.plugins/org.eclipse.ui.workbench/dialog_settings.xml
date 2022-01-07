@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.fx.ide.jdt.ui.javafx"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.fx.ide.fxml.wizard1"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.jst.ejb.ui"/>
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.debug.ui.java"/>
-			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
-			<item value="org.eclipse.emf.codegen.ui.JETNewWizards"/>
 			<item value="org.eclipse.fx.ide"/>
-			<item value="org.eclipse.fx.ide/org.eclipse.fx.ide.clazz"/>
-			<item value="org.eclipse.wst.jsdt.ui.java"/>
-			<item value="org.eclipse.xtend.ide.wizards"/>
-			<item value="org.eclipse.ui.Examples"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.xtend.ui.Examples"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -35,6 +23,8 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\Login.jar"/>
+			<item value="C:\Users\rnjsd\Acorn\workspace\mariadb-java-client-2.7.4.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211203.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211201.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211130.jar"/>
@@ -53,8 +43,20 @@
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211112.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211111.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\mail.jar"/>
-			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\jinsMail.jar"/>
-			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211115.jar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_WIDTH" value="525"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT" value="675"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textEntries">
+		</list>
+		<list key="textArray">
 		</list>
 	</section>
 </section>

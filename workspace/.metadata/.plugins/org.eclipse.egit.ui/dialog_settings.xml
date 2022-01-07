@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="2"/>
+	<item key="CommitDialog.showUntracked" value="true"/>
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/HanKangHyun/Travel.git"/>
 		<item value="https://github.com/rnjsdhwp/Acorn.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
@@ -10,9 +12,11 @@
 		<item value="bitbucket.org"/>
 	</list>
 	<list key="CommitDialog.authorValues">
+		<item value="oje.kwon &lt;rnjsdhwp12@naver.com&gt;"/>
 		<item value="rnjsdhwp &lt;rnjsdhwp12@naver.com&gt;"/>
 	</list>
 	<list key="CommitDialog.committerValues">
+		<item value="oje.kwon &lt;rnjsdhwp12@naver.com&gt;"/>
 		<item value="rnjsdhwp &lt;rnjsdhwp12@naver.com&gt;"/>
 	</list>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
@@ -36,7 +40,7 @@
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="635"/>
+		<item key="DIALOG_X_ORIGIN" value="301"/>
 		<item key="DIALOG_Y_ORIGIN" value="204"/>
 		<item key="DIALOG_WIDTH" value="668"/>
 		<item key="DIALOG_HEIGHT" value="481"/>
@@ -47,5 +51,33 @@
 		</list>
 	</section>
 	<section name="GitImportWizard">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="191"/>
+		<item key="DIALOG_Y_ORIGIN" value="216"/>
+		<item key="DIALOG_WIDTH" value="778"/>
+		<item key="DIALOG_HEIGHT" value="462"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item key="DIALOG_X_ORIGIN" value="-121"/>
+		<item key="DIALOG_Y_ORIGIN" value="-346"/>
+		<item key="DIALOG_WIDTH" value="862"/>
+		<item key="DIALOG_HEIGHT" value="737"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.MergeTargetSelectionDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="356"/>
+		<item key="DIALOG_Y_ORIGIN" value="18"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="760"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.merge.MergeResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="132"/>
+		<item key="DIALOG_Y_ORIGIN" value="344"/>
+		<item key="DIALOG_WIDTH" value="837"/>
+		<item key="DIALOG_HEIGHT" value="271"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>
