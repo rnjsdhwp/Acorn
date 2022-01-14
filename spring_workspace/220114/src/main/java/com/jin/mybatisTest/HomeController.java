@@ -54,10 +54,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/insertProc")
 	public String insertProc(Person person,
-			@RequestParam("userId") String userId) {
-		logger.info(person.getFirstname());
+			@RequestParam("userId") String userId,
+			Model model) {
 		iTestServ.Insert(person);
-		logger.info(userId);
+		model.addAttribute("personList", iTestServ.selectAll());
 		return "select";
 	}
 	
