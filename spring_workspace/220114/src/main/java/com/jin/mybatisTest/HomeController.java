@@ -32,7 +32,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/")
+	@RequestMapping(value = {"/", "home"})
 	public String home() {
 		try {
 			dataSource.getConnection();
@@ -58,6 +58,21 @@ public class HomeController {
 		logger.info(person.getFirstname());
 		iTestServ.Insert(person);
 		logger.info(userId);
-		return "home";
+		return "select";
+	}
+	
+	@RequestMapping(value = "/selectAll")
+	public String selectAll(Model model) {
+		model.addAttribute("personList", iTestServ.selectAll());
+		
+		return "select";
+	}
+	
+	@RequestMapping(value = "/selectPart")
+	public String selectPart(Model model,
+			@RequestParam("id") String id) {
+		model.addAttribute("personList", iTestServ.selectAll());
+		model.addAttribute("personPart", iTestServ.selectPart(id));
+		return "selectPart";
 	}
 }

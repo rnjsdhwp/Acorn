@@ -10,5 +10,6 @@
 	Hello world!  
 </h1>
 	<a href="insert">회원가입</a>
+	<a href="selectAll">회원리스트</a>
 </body>
 </html>

@@ -2,9 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jin.DAO.ITestDAO">
 	<insert id="Insert" parameterType="com.jin.DTO.Person">
-		INSERT INTO person(ID, FIRSTNAME, LASTNAME) 
+		INSERT INTO person(ID,
+		FIRSTNAME, LASTNAME)
 		VALUES (#{id, jdbcType=NUMERIC}, #{firstname, jdbcType=VARCHAR},
 		#{lastname, jdbcType=VARCHAR})
-			
+
 	</insert>
+
+	<select id="selectAll" resultType="com.jin.DTO.Person">
+		SELECT * FROM PERSON
+	</select>
+	
+	<select id="selectPart" resultType="com.jin.DTO.Person" parameterType="String">
+		SELECT * FROM PERSON where id=#{id}
+	</select>
 </mapper>

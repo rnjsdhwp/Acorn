@@ -1,5 +1,7 @@
 package com.jin.Serv;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,16 @@ public class TestServImpl implements ITestService{
 	public void Insert(Person person) {
 		logger.warn(person.getLastname());
 		iTestDAO.Insert(person);
+	}
+
+	@Override
+	public List<Person> selectAll() {
+		return iTestDAO.selectAll();
+	}
+
+	@Override
+	public Person selectPart(String id) {
+		return iTestDAO.selectPart(id);
 	}
 
 }
