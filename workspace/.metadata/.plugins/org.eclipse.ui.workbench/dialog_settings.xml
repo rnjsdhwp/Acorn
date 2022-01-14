@@ -7,12 +7,10 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ZipFile"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.jst.servlet.ui.internal.wizard.WebComponentImportWizard"/>
 		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.jdt.internal.ui.jarpackager.JarPackageWizard"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
-			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
 			<item value="org.eclipse.jst.ejb.ui"/>
@@ -23,6 +21,7 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211227.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\Login.jar"/>
 			<item value="C:\Users\rnjsd\Acorn\workspace\mariadb-java-client-2.7.4.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211203.jar"/>
@@ -42,7 +41,6 @@
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\123.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\211112.jar"/>
 			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\211111.jar"/>
-			<item value="C:\Users\rnjsd\OneDrive\바탕 화면\새 폴더 (4)\mail.jar"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
@@ -58,5 +56,12 @@
 		</list>
 		<list key="textArray">
 		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="78"/>
+		<item key="DIALOG_Y_ORIGIN" value="-188"/>
+		<item key="DIALOG_WIDTH" value="1142"/>
+		<item key="DIALOG_HEIGHT" value="976"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

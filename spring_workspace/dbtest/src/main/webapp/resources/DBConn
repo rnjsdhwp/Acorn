@@ -1,0 +1,4 @@
+jin.driverClassName=oracle.jdbc.OracleDriver
+jin.url=jdbc:oracle:thin:@localhost:1521:xe
+jin.username=c##oje
+jin.password=jin1234

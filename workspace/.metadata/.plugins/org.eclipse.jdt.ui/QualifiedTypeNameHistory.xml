@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.cell.PropertyValueFactory"/>
     <fullyQualifiedTypeName name="javafx.beans.property.StringProperty"/>
     <fullyQualifiedTypeName name="javafx.collections.FXCollections"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -52,7 +50,6 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="Travel.ThemaController"/>
     <fullyQualifiedTypeName name="Travel.LocalController"/>
-    <fullyQualifiedTypeName name="review.ReviewCtrl"/>
     <fullyQualifiedTypeName name="Com.LoginController"/>
     <fullyQualifiedTypeName name="Travel.LoDetailPageController"/>
     <fullyQualifiedTypeName name="Homepage.IHomeImpl"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
     <fullyQualifiedTypeName name="org.w3c.dom.events.MouseEvent"/>
     <fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
+    <fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
+    <fullyQualifiedTypeName name="javafx.scene.layout.GridPane"/>
+    <fullyQualifiedTypeName name="review.ReviewCtrl"/>
 </qualifiedTypeNameHistroy>
