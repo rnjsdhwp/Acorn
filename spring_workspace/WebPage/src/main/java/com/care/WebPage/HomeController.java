@@ -29,7 +29,7 @@ public class HomeController {
 		return "index";
 	}
 	@RequestMapping(value = "index")
-	public String index(Model model,
+	public String index2(Model model,
 			@RequestParam("formPath") String formPath) {
 		model.addAttribute("formPath", formPath);
 		return "index";
@@ -46,8 +46,9 @@ public class HomeController {
 	public String membership() {
 		return "MemberForm/memberForm";
 	}
-	@RequestMapping(value = "board")
+	@RequestMapping(value = "/board")
 	public String board() {
 		return "BoardForm/boardForm";
 	}
+	
 }

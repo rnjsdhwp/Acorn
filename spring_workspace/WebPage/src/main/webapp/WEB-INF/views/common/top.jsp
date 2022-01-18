@@ -1,4 +1,3 @@
-<!-- top.jsp -->
 <%@ page contentType="text/html; charset=UTF-8"%>
 <style type="text/css">
 <!--
@@ -14,10 +13,10 @@ a:active{color:#ff00cc; text-decoration:underline; }
 	<tr><td align="center" colspan=5><h1>CARE Lab</h1></td></tr>
 	<tr align="right">
 		<td width=600></td>
-		<td><a href="index?formPath='home'">홈</a></td>
-		<td><a href="index?formPath='login'">로그인</a></td>
-		<td><a href="index?formPath='membership'">회원가입</a></td>
-		<td><a href="index?formPath='board'">게시판</a></td>
+		<td><a href="index?formPath=home">홈</a></td>
+		<td><a href="index?formPath=login">로그인</a></td>
+		<td><a href="index?formPath=membership">회원가입</a></td>
+		<td><a href="index?formPath=board">게시판</a></td>
 	</tr>
 	<tr><td align="center" colspan=5><hr/></td></tr>
 </table>
