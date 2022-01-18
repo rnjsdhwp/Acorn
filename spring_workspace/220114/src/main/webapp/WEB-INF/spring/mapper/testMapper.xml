@@ -16,4 +16,21 @@
 	<select id="selectPart" resultType="com.jin.DTO.Person" parameterType="String">
 		SELECT * FROM PERSON where id=#{id}
 	</select>
+	<!-- 
+	<update id="modifyProc" parameterType="com.jin.DTO.Person">
+		update person
+		set firstname=#{firstname}, lastname=#{lastname}
+		where id=#{id}
+	</update>
+	 -->
+	 <update id="modifyProc" parameterType="map">
+		update person
+		set firstname=#{fn}, lastname=#{ln}
+		where id=#{id}
+	</update>
+	
+	<delete id="deleteProc" parameterType="String">
+		delete from person
+		where id=#{id}
+	</delete>
 </mapper>

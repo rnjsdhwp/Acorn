@@ -8,4 +8,6 @@ public interface ITestService {
 	public void Insert(Person person);
 	public List<Person> selectAll();
 	public Person selectPart(String id);
+	public void modifyProc(Person person);
+	public void deleteProc(String id);
 }

@@ -1,6 +1,8 @@
 package com.jin.Serv;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,24 @@ public class TestServImpl implements ITestService{
 	@Override
 	public Person selectPart(String id) {
 		return iTestDAO.selectPart(id);
+	}
+
+	@Override
+	public void modifyProc(Person person) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+//		map.put("id", String.valueOf(person.getId()));
+		map.put("id", person.getId()+"");
+		map.put("fn", person.getFirstname());
+		map.put("ln", person.getLastname());
+		
+//		iTestDAO.modifyProc(person);
+		iTestDAO.modifyProc(map);
+	}
+
+	@Override
+	public void deleteProc(String id) {
+		iTestDAO.deleteProc(id);
 	}
 
 }
