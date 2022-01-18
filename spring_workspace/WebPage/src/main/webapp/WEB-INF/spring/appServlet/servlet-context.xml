@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.care.WebPage" />
-	
+	<context:component-scan base-package="com.jin.Membership" />
 	
 	
 </beans:beans>
