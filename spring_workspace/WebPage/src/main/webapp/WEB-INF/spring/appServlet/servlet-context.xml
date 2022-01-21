@@ -23,6 +23,7 @@
 	
 	<context:component-scan base-package="com.care.WebPage" />
 	<context:component-scan base-package="com.jin.Membership" />
+	<context:component-scan base-package="com.jin.Login" />
 	
 	
 </beans:beans>

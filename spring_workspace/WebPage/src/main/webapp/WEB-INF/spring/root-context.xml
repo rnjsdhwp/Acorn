@@ -21,4 +21,9 @@
 		id="mapperFactoryBean"
 		p:mapperInterface="com.jin.Membership.IMemberDAO"
 		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
+		
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+		id="LoginFactoryBean"
+		p:mapperInterface="com.jin.Login.ILoginDao"
+		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />	
 </beans>

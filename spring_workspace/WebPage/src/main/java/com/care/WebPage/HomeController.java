@@ -1,5 +1,7 @@
 package com.care.WebPage;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -38,7 +40,12 @@ public class HomeController {
 		return "MemberForm/loginForm";
 	}
 	@RequestMapping(value = "membership")
-	public String membership() {
+	public String membership(HttpSession session) {
+		Boolean authState = (Boolean) session.getAttribute("authState");
+//		최초 시작인지 확인
+		if(authState == null) {
+			session.setAttribute("authState", false);
+		}
 		return "MemberForm/memberForm";
 	}
 	@RequestMapping(value = "/board")
