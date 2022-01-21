@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jin.Membership.IMemberDAO">
+	<select id="IsExistID" parameterType="String" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM login
+		WHERE ID=#{id}
+	</select>
+
+	<insert id="memberProc" parameterType="com.jin.Login.Login">
+		insert into login(id, pw)
+		values(#{id}, #{pw})
+	</insert>
+
+	<insert id="InsertMember"
+		parameterType="com.jin.Membership.Member">
+		INSERT INTO Member(id, gender, email)
+		VALUES(#{id},
+		#{gender}, #{email})
+	</insert>
+
+	<select id="searchZipcode" parameterType="String"
+		resultType="com.jin.Membership.Zipcode">
+		select * from zipcode
+		where dong1 like '%'||#{addr}||'%'
+		OR
+		dong2 like '%'||#{addr}||'%'
+		OR doro like '%'||#{addr}||'%'
+	</select>
+
+	<insert id="InsertPostcode"
+		parameterType="com.jin.Membership.Postcode">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT nvl(max(no), 0)+1 FROM postcode
+		</selectKey>
+		INSERT INTO Postcode (no, zipcode, addr1, addr2, id)
+		VALUES (#{no},#{zipcode},#{addr1},#{addr2},#{id})
+	</insert>
+</mapper>
