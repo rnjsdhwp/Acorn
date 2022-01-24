@@ -10,9 +10,9 @@
 	HttpSession topSession = request.getSession(false);
 	String sessionId = (String)topSession.getAttribute("id");
 	//session을 식별하기 위한 고유 ID 정보
-	System.out.println("getId : "+topSession.getId());
+	//System.out.println("getId : "+topSession.getId());
 	//사용자가 등록한 ID 정보
-	System.out.println("sessionId : "+sessionId);
+	//System.out.println("sessionId : "+sessionId);
 %>
 <c:url var="urlHome" value="/" />
 <style type="text/css">

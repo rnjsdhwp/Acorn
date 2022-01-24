@@ -48,9 +48,12 @@ public class HomeController {
 		}
 		return "MemberForm/memberForm";
 	}
-	@RequestMapping(value = "/board")
+	@RequestMapping(value = "board")
 	public String board() {
 		return "BoardForm/boardForm";
 	}
-	
+	@RequestMapping(value = "write")
+	public String write() {
+		return "BoardForm/writeForm";
+	}
 }

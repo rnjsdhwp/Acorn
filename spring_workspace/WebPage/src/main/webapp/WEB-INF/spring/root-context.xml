@@ -23,7 +23,17 @@
 		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
 		
 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
-		id="LoginFactoryBean"
+		id="loginFactoryBean"
 		p:mapperInterface="com.jin.Login.ILoginDao"
-		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />	
+		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
+	
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+		id="boardFactoryBean"
+		p:mapperInterface="com.jin.Board.IBoardDAO"
+		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
+		
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver"
+		p:maxInMemorySize="100000000"
+		p:maxUploadSize="100000000"/>
 </beans>
