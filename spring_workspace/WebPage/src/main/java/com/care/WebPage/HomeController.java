@@ -56,4 +56,8 @@ public class HomeController {
 	public String write() {
 		return "BoardForm/writeForm";
 	}
+	@RequestMapping(value = "view")
+	public String view() {
+		return "BoardForm/viewForm";
+	}
 }

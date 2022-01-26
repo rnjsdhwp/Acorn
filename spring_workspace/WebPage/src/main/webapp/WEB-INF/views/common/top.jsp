@@ -35,7 +35,7 @@ a:active{color:#ff00cc; text-decoration:underline; }
 			<td><a href="${urlHome }index?formPath=membership">회원가입</a></td>
 		<% }else{ %>
 			<td><a href="${urlHome }login/logout">로그아웃</a></td>
-			<td><a href="${urlHome }index?formPath=board">게시판</a></td>
+			<td><a href="${urlHome }board/boardProc">게시판</a></td>
 		<% } %>
 	</tr>
 	<tr><td align="center" colspan=5><hr/></td></tr>

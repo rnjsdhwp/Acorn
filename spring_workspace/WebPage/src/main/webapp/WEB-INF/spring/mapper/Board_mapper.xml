@@ -8,4 +8,44 @@
 			INSERT INTO board(no, id, title, content, writeDate)
 			VALUES (#{no}, #{id}, #{title}, #{content}, #{writedate})
 	</insert>
+	
+	<insert id="AttachFile" parameterType="map">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT nvl(max(no), 0)+1 FROM attachFile
+		</selectKey>
+			INSERT INTO attachFile(no, systemFile, originFile, fno)
+			VALUES (#{no}, #{systemFile}, #{originFile}, #{fno})
+	</insert>
+	
+	<select id="ReadBoard" resultType="com.jin.Board.Board">
+		select * from board
+	</select>
+	
+	<select id="DetailRead" resultType="com.jin.Board.Board" parameterType="String">
+		select * from board
+		where no=${writeNo}
+	</select>
+	
+	<select id="DetailReadAttach" resultType="map" parameterType="String">
+		select systemFile, originFile from attachFile
+		where fno=#{writeNo}
+	</select>
+	
+	<insert id="Hits" parameterType="map">
+		<selectKey keyProperty="readNo" resultType="int" order="BEFORE">
+			SELECT nvl(max(readNo), 0)+1 FROM hits
+			WHERE no=#{no}
+		</selectKey>
+		<choose>
+			<when test="readNo==1">
+				INSERT INTO Hits(no, readNo)
+				VALUES(#{no}, #{readNo})
+			</when>
+			<otherwise>
+				UPDATE Hits
+				SET readNo=#{readNo}
+				WHERE no=#{no}
+			</otherwise>		
+		</choose>
+	</insert>
 </mapper>

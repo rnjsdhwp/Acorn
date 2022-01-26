@@ -1,5 +1,8 @@
 package com.jin.Board;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -21,9 +24,23 @@ public class BoardController {
 		return "forward:/index?formPath=write";
 	}
 	@RequestMapping(value="writeProc")
-	public String board(Board board,
+	public String writeProc(Board board,
 			HttpServletRequest req) {
 		iBoardServ.writeProc(board, req);
-		return "forward:/index?formPath=write";
+		return "forward:/board/boardProc";
+	}
+	@RequestMapping(value="boardProc")
+	public String boardProc(Model model) {
+		List<Board> boardLst = iBoardServ.ReadBoard();
+		model.addAttribute("boardLst", boardLst);
+		return "forward:/index?formPath=board";
+	}
+	@RequestMapping(value="detailRead")
+	public String detailRead(Model model,
+			@RequestParam("writeNo") String writeNo) {
+		Map<String, Object> returnMap = iBoardServ.DetailRead(writeNo);
+		model.addAttribute("board", returnMap.get("board"));
+		model.addAttribute("attachFileMap", returnMap.get("attachFileMap"));
+		return "forward:/index?formPath=view";
 	}
 }
