@@ -48,4 +48,14 @@
 			</otherwise>		
 		</choose>
 	</insert>
+	
+	<insert id="InsertReply" parameterType="map">
+		<selectKey keyProperty="depth" resultType="int" order="BEFORE">
+			select nvl(max(depth), 0)+1 as depth
+			from reply
+			where no=#{pno}
+		</selectKey>
+		insert into reply
+		values(#{no}, #{pno}, #{depth})
+	</insert>
 </mapper>

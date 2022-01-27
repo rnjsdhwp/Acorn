@@ -24,8 +24,7 @@ public class BoardController {
 		return "forward:/index?formPath=write";
 	}
 	@RequestMapping(value="writeProc")
-	public String writeProc(Board board,
-			HttpServletRequest req) {
+	public String writeProc(Board board, HttpServletRequest req) {
 		iBoardServ.writeProc(board, req);
 		return "forward:/board/boardProc";
 	}
@@ -42,5 +41,12 @@ public class BoardController {
 		model.addAttribute("board", returnMap.get("board"));
 		model.addAttribute("attachFileMap", returnMap.get("attachFileMap"));
 		return "forward:/index?formPath=view";
+	}
+	@RequestMapping(value="reply")
+	public String reply(Model model,
+			@RequestParam("pno") String pno) {
+		logger.warn("pno"+pno);
+		model.addAttribute("pno", pno);
+		return "forward:/index?formPath=write";
 	}
 }

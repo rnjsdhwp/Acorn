@@ -40,7 +40,7 @@
 				<td style="width: 330px; height: 40px;" align="left"><div class="title" id="${board.no }">${board.title }</div></td>
 				<td style="width: 80px; height: 40px;" align="center">${board.id }</td>
 				<td style="width: 120px; height: 40px;" align="center">${board.writedate }</td>
-				<td style="width: 80px; height: 40px;" align="center">1</td>
+				<td style="width: 80px; height: 40px;" align="center">${board.no }</td>
 			</tr>
 			</c:forEach>
 			<tr>

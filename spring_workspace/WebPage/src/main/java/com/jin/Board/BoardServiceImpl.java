@@ -30,13 +30,26 @@ public class BoardServiceImpl implements IBoardService{
 		Date writeDate = new Date(System.currentTimeMillis());
 		board.setWritedate(writeDate);
 //		logger.warn(board.getWritedate().toString());
-		
 		iBoardDAO.writeProc(board);
+		
+//		systemFile, originFile È¹µæ
 		Map<String, String> fileMap = Upload(req);
 //		fno
-		logger.warn("±Û¾²±â : "+board.getNo());
-		fileMap.put("fno", String.valueOf(board.getNo()));
-		iBoardDAO.AttachFile(fileMap);
+		if(fileMap.get("systemFile") != null) {
+//			logger.warn("systemFile : "+fileMap.get("systemFile"));
+//			logger.warn("±Û¾²±â : "+board.getNo());
+			fileMap.put("fno", String.valueOf(board.getNo()));
+			iBoardDAO.AttachFile(fileMap);
+		}
+		
+		String pno = req.getParameter("pno");
+		if(!"".equals(pno)) {
+			Map<String, Integer> replyMap = new HashMap<String, Integer>();
+			replyMap.put("no", board.getNo());
+			replyMap.put("pno", Integer.parseInt(pno));
+			
+			iBoardDAO.InsertReply(replyMap);
+		}
 	}
 
 	private Map<String, String> Upload(HttpServletRequest req) {

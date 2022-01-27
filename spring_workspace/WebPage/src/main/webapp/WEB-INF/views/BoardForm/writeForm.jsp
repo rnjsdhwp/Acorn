@@ -5,6 +5,7 @@
 
 <center> 
 <form action="${urlHome }board/writeProc" method="post" enctype="multipart/form-data">
+<input type="text" name="pno" value="${pno}"/>
 	<table style="width: 650px; ">
 		<tr>
 			<td style="width: 80px; height:40px;" align="right">작성자<%-- <%= topSession.getAttribute("id") %> --%></td>

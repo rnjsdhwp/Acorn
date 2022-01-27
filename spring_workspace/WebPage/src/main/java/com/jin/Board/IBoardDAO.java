@@ -10,4 +10,5 @@ public interface IBoardDAO {
 	Board DetailRead(String writeNo);
 	Map<String, String> DetailReadAttach(String writeNo);
 	void Hits(Map<String, Integer> hitsMap);
+	void InsertReply(Map<String, Integer> replyMap);
 }

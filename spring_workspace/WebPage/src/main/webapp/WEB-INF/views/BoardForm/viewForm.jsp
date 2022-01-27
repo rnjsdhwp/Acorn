@@ -3,6 +3,8 @@
 <c:url var="home" value="/"/>
 
 <center>
+<form action="${home }board/write">
+<input type="hidden" name="pno" value="${board.no }"/>
 <table style="width: 650px; ">
 	<tr>
 		<td style="width: 300px; height:40px;" valign="middle"><h2>${board.title }</h2></td>
@@ -29,12 +31,13 @@
 	</tr>
 	<tr>
 		<td colspan=2 align="right">
-			<input type=button style="width: 60px; " value='글쓰기'/> 
-			<input type=button style="width: 60px; " value='답글'/>
-			<input type=button style="width: 60px; " value='수정'/>
-			<input type=button style="width: 60px; " value='삭제'/>
-			<input type=button style="width: 60px; " value='목록'/>
+			<button style="width: 60px; ">글쓰기</button>
+			<button formaction="${home }board/reply" style="width: 60px; ">답글</button>
+			<button style="width: 60px; ">수정</button>
+			<button style="width: 60px; ">삭제</button>
+			<button style="width: 60px; ">목록</button>
 		</td>
 	</tr>
 </table>
+</form>
 </center>
