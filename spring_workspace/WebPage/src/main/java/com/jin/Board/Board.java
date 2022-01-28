@@ -19,6 +19,16 @@ public class Board {
 	
 	 // ³»¿ë 
 	 private String content;
+	 
+	 private int hit;
+		
+	public int getHit() {
+		return hit;
+	}
+
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
 	
 	 public int getNo() {
 	     return no;

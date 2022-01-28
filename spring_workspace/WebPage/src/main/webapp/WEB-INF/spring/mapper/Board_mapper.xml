@@ -18,7 +18,24 @@
 	</insert>
 	
 	<select id="ReadBoard" resultType="com.jin.Board.Board">
-		select * from board
+		SELECT no, id, title, contents, writedate, hit
+		FROM(
+			SELECT LEVEL, no, LPAD(' ', 4*(LEVEL-1))||title as title,
+			id, contents, writedate, hit, pno, depth, ROWNUM AS rnum
+			FROM(
+				SELECT b.no, writedate, title,
+				contents, id, nvl(readno, 0) as hit,
+				nvl(pno, 0) as pno, nvl(depth, 0) as depth
+				FROM board b
+				LEFT JOIN hits h
+				ON b.no = h.no
+				LEFT JOIN reply r
+				ON b.no=r.no
+			)
+			START WITH pno=0
+			CONNECT BY PRIOR no=pno
+			ORDER SIBLINGS BY no desc
+		)
 	</select>
 	
 	<select id="DetailRead" resultType="com.jin.Board.Board" parameterType="String">

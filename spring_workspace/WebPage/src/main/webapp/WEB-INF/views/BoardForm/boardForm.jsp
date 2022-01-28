@@ -37,7 +37,7 @@
 			<c:forEach var="board" items="${boardLst}">
 			<tr>
 				<td style="width: 40px; height: 40px;" align="center"><input type="checkbox" /></td>
-				<td style="width: 330px; height: 40px;" align="left"><div class="title" id="${board.no }">${board.title }</div></td>
+				<td style="width: 330px; height: 40px;" align="left"><div class="title" id="${board.no }"><pre>${board.title }</pre></div></td>
 				<td style="width: 80px; height: 40px;" align="center">${board.id }</td>
 				<td style="width: 120px; height: 40px;" align="center">${board.writedate }</td>
 				<td style="width: 80px; height: 40px;" align="center">${board.no }</td>
