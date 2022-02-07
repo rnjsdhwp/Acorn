@@ -17,14 +17,14 @@
 			VALUES (#{no}, #{systemFile}, #{originFile}, #{fno})
 	</insert>
 	
-	<select id="ReadBoard" resultType="com.jin.Board.Board">
-		SELECT no, id, title, contents, writedate, hit
+	<select id="ReadBoard" parameterType="Map" resultType="com.jin.Board.Board">
+		SELECT no, id, title, content, writedate, hit
 		FROM(
 			SELECT LEVEL, no, LPAD(' ', 4*(LEVEL-1))||title as title,
-			id, contents, writedate, hit, pno, depth, ROWNUM AS rnum
+			id, content, writedate, hit, pno, depth, ROWNUM AS rnum
 			FROM(
 				SELECT b.no, writedate, title,
-				contents, id, nvl(readno, 0) as hit,
+				content, id, nvl(readno, 0) as hit,
 				nvl(pno, 0) as pno, nvl(depth, 0) as depth
 				FROM board b
 				LEFT JOIN hits h
@@ -36,6 +36,7 @@
 			CONNECT BY PRIOR no=pno
 			ORDER SIBLINGS BY no desc
 		)
+		<![CDATA[WHERE rnum>=#{start} AND rnum<=#{end}]]>
 	</select>
 	
 	<select id="DetailRead" resultType="com.jin.Board.Board" parameterType="String">
@@ -75,4 +76,19 @@
 		insert into reply
 		values(#{no}, #{pno}, #{depth})
 	</insert>
+	
+	<update id="Modify" parameterType="com.jin.Board.Board">
+		UPDATE board
+		SET title=#{title}, content=#{content}
+		WHERE no=#{no}
+	</update>
+	
+	<delete id="Delete" parameterType="String">
+		DELETE FROM board
+		WHERE no=#{no}
+	</delete>
+	
+	<select id="BoardCount" resultType="int">
+		SELECT COUNT(*) FROM BOARD
+	</select>
 </mapper>

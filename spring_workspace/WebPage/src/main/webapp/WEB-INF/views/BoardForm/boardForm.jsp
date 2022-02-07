@@ -11,6 +11,24 @@
 			$("#frm").attr("action", "${urlHome }board/detailRead");
 			$("#frm").submit();
 		})
+		
+		$("#allSelect").click(function(){
+			/* .(클래스가) chkbox인 prop(속성) 중 checked에 this.checked를 저장 */
+			$(".chkbox").prop("checked", this.checked);
+			console.log($(".chkbox").length);
+			/* checked가 true인 checkbox의 개수 출력 */
+			console.log($(".chkbox:checked").length);
+		})
+		
+		$(".chkbox").click(function(){
+			/* if($(".chkbox").length == $(".chkbox:checked").length)
+				$("#allSelect").prop("checked", true);
+			else
+				$("#allSelect").prop("checked", false); */
+			
+			let checked = $(".chkbox").length == $(".chkbox:checked").length;
+			$("#allSelect").prop("checked", checked);
+		})
 	})
 </script>
 
@@ -36,7 +54,7 @@
 			</tr>
 			<c:forEach var="board" items="${boardLst}">
 			<tr>
-				<td style="width: 40px; height: 40px;" align="center"><input type="checkbox" /></td>
+				<td style="width: 40px; height: 40px;" align="center"><input class="chkbox" type="checkbox" name="chkbox" value="${board.no }"/></td>
 				<td style="width: 330px; height: 40px;" align="left"><div class="title" id="${board.no }"><pre>${board.title }</pre></div></td>
 				<td style="width: 80px; height: 40px;" align="center">${board.id }</td>
 				<td style="width: 120px; height: 40px;" align="center">${board.writedate }</td>
@@ -47,9 +65,9 @@
 				<td colspan=5><hr /></td>
 			</tr>
 			<tr>
-				<td colspan=2><input type="checkbox" />전체선택</td>
+				<td colspan=2><input id="allSelect" type="checkbox" />전체선택</td>
 				<td colspan=3 align="right">
-					<input type="button" value='삭제' style="width: 100px;" /> 
+					<button formaction="${urlHome }board/deletes" style="width:100px;">삭제</button>
 					<button style="width:100px;">글쓰기</button>
 				</td>
 			</tr>
@@ -58,7 +76,8 @@
 			</tr>
 		</table>
 	</form>
-	이전 1 2 3 4 다음
+	<!-- 이전 1 2 3 4 다음 -->
+	${navi}
 	<table>
 		<tr>
 			<td>

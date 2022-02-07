@@ -19,11 +19,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.jin.Common.BoardTools;
+
 @Service
 public class BoardServiceImpl implements IBoardService{
 	private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 	@Autowired private IBoardDAO iBoardDAO;
 	private final String UPLOADPATH = "/resources/upload/";
+	private final int PAGEBLOCK = 4;
 	
 	@Override
 	public void writeProc(Board board ,HttpServletRequest req) {
@@ -125,8 +128,11 @@ public class BoardServiceImpl implements IBoardService{
 	}
 
 	@Override
-	public List<Board> ReadBoard() {
-		return iBoardDAO.ReadBoard();
+	public List<Board> ReadBoard(int currentPage) {
+		Map<String, Integer> boardMap = new HashMap<String, Integer>();
+		boardMap.put("start", 1+(PAGEBLOCK*(currentPage-1)));
+		boardMap.put("end", PAGEBLOCK*currentPage);
+		return iBoardDAO.ReadBoard(boardMap);
 	}
 
 	@Override
@@ -152,5 +158,35 @@ public class BoardServiceImpl implements IBoardService{
 //			logger.warn(key + " : " + attachFileMap.get(key));
 //		}
 		return returnMap;
+	}
+
+	@Override
+	public void Modify(Board board) {
+		iBoardDAO.Modify(board);
+	}
+
+	@Override
+	public void Delete(String no) {
+		iBoardDAO.Delete(no);
+	}
+
+	@Override
+	public void Deletes(String[] chkboxes) {
+		for(String no : chkboxes) {
+			iBoardDAO.Delete(no);
+		}
+	}
+
+	@Override
+	public String getNavi(HttpServletRequest req) {
+		String currentPageStr = req.getParameter("currentPage");
+		int currentPage = 1;
+		int totalPage = iBoardDAO.BoardCount();
+		String url = req.getContextPath() + "/board/pageProc?currentPage=";
+		
+		if(currentPageStr != null)
+			currentPage = Integer.parseInt(currentPageStr);
+		
+		return BoardTools.getNavi(currentPage, PAGEBLOCK, totalPage, url);
 	}
 }

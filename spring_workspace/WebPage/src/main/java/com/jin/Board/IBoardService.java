@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface IBoardService {
 	void writeProc(Board board, HttpServletRequest req);
-	List<Board> ReadBoard();
+	List<Board> ReadBoard(int currentPage);
 	Map<String, Object> DetailRead(String writeNo);
+	void Modify(Board board);
+	void Delete(String no);
+	void Deletes(String[] chkboxes);
+	String getNavi(HttpServletRequest req);
 }
