@@ -53,23 +53,23 @@ public class BoardController {
 	
 	@RequestMapping(value="boardProc")
 	public String boardProc(Model model, HttpServletRequest req) {
-		int currentPage = 1;
+//		int currentPage = 1;
 //		int pageBlock = 5;
 //		int totalPage = 30;
 //		String url = req.getContextPath() + "/board/pageProc?currentPage=";
 		
-		List<Board> boardLst = iBoardServ.ReadBoard(currentPage);
+		List<Board> boardLst = iBoardServ.ReadBoard(req);
 		model.addAttribute("boardLst", boardLst);
 		model.addAttribute("navi", iBoardServ.getNavi(req));
 		return "forward:/index?formPath=board";
 	}
-	@RequestMapping(value="pageProc")
-	public String pageProc(Model model, @RequestParam int currentPage, HttpServletRequest req) {
-		List<Board> boardLst = iBoardServ.ReadBoard(currentPage);
-		model.addAttribute("boardLst", boardLst);
-		model.addAttribute("navi", iBoardServ.getNavi(req));
-		return "forward:/index?formPath=board";
-	}
+//	@RequestMapping(value="pageProc")
+//	public String pageProc(Model model, @RequestParam int currentPage, HttpServletRequest req) {
+//		List<Board> boardLst = iBoardServ.ReadBoard(currentPage);
+//		model.addAttribute("boardLst", boardLst);
+//		model.addAttribute("navi", iBoardServ.getNavi(req));
+//		return "forward:/index?formPath=board";
+//	}
 	@RequestMapping(value="detailRead")
 	public String detailRead(Model model,
 			@RequestParam("writeNo") String writeNo) {

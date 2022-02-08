@@ -128,11 +128,47 @@ public class BoardServiceImpl implements IBoardService{
 	}
 
 	@Override
-	public List<Board> ReadBoard(int currentPage) {
-		Map<String, Integer> boardMap = new HashMap<String, Integer>();
+	public List<Board> ReadBoard(HttpServletRequest req) {
+//		Map<String, Object> boardMap = new HashMap<String, Object>();
+		Map<String, Object> boardMap = getBoardMap(req);
+		int currentPage = getCurrentPage(req);
+		
 		boardMap.put("start", 1+(PAGEBLOCK*(currentPage-1)));
 		boardMap.put("end", PAGEBLOCK*currentPage);
+		
+//		String searchName = req.getParameter("searchName");
+//		if(searchName != null) {
+//			boardMap.put("searchName", searchName);
+//			boardMap.put("searchWord", req.getParameter("searchWord"));
+//		}
 		return iBoardDAO.ReadBoard(boardMap);
+	}
+
+	private Map<String, Object> getBoardMap(HttpServletRequest req) {
+		Map<String, Object> boardMap = new HashMap<String, Object>();
+		String searchName = req.getParameter("searchName");
+		
+		if(searchName != null) {
+			boardMap.put("searchName", searchName);
+			boardMap.put("searchWord", req.getParameter("searchWord"));
+		}
+		
+		return boardMap;
+	}
+
+	private int getCurrentPage(HttpServletRequest req) {
+//		String currentPageStr = req.getParameter("currentPage");
+//		int currentPage = 1;
+//		
+//		if(currentPageStr != null)
+//			currentPage = Integer.parseInt(currentPageStr);
+		
+		String currentPageStr = req.getParameter("currentPage");
+		
+		if(currentPageStr != null)
+			return Integer.parseInt(currentPageStr);
+		
+		return 1;
 	}
 
 	@Override
@@ -179,13 +215,21 @@ public class BoardServiceImpl implements IBoardService{
 
 	@Override
 	public String getNavi(HttpServletRequest req) {
-		String currentPageStr = req.getParameter("currentPage");
-		int currentPage = 1;
-		int totalPage = iBoardDAO.BoardCount();
-		String url = req.getContextPath() + "/board/pageProc?currentPage=";
+//		String currentPageStr = req.getParameter("currentPage");
+//		int currentPage = 1;
+		int currentPage = getCurrentPage(req);
+		Map<String, Object> boardMap = getBoardMap(req);
+		int totalPage = iBoardDAO.BoardCount(boardMap);
+		String url = req.getContextPath() + "/board/boardProc?";
 		
-		if(currentPageStr != null)
-			currentPage = Integer.parseInt(currentPageStr);
+		if(boardMap.get("searchName") != null) {
+			url += "searchName=" + boardMap.get("searchName") + "&";
+			url += "searchWord=" + boardMap.get("searchWord") + "&";
+		}
+		url += "currentPage=";
+		
+//		if(currentPageStr != null)
+//			currentPage = Integer.parseInt(currentPageStr);
 		
 		return BoardTools.getNavi(currentPage, PAGEBLOCK, totalPage, url);
 	}

@@ -32,6 +32,20 @@
 				LEFT JOIN reply r
 				ON b.no=r.no
 			)
+			<if test="searchName!=null">
+				<choose>
+					<when test="searchName=='all'">
+						WHERE title like '%'||#{searchWord}||'%'
+						OR id like '%'||#{searchWord}||'%'
+					</when>
+					<!-- <when test="searchName=='title'">
+						WHERE title like '%'||#{searchWord}||'%'
+					</when> -->
+					<otherwise>
+						WHERE ${searchName} like '%'||#{searchWord}||'%'
+					</otherwise>
+				</choose>
+			</if>
 			START WITH pno=0
 			CONNECT BY PRIOR no=pno
 			ORDER SIBLINGS BY no desc
@@ -88,7 +102,21 @@
 		WHERE no=#{no}
 	</delete>
 	
-	<select id="BoardCount" resultType="int">
+	<select id="BoardCount" parameterType="map" resultType="int">
 		SELECT COUNT(*) FROM BOARD
+		<if test="searchName!=null">
+			<choose>
+				<when test="searchName=='all'">
+					WHERE title like '%'||#{searchWord}||'%'
+					OR id like '%'||#{searchWord}||'%'
+				</when>
+				<!-- <when test="searchName=='title'">
+					WHERE title like '%'||#{searchWord}||'%'
+				</when> -->
+				<otherwise>
+					WHERE ${searchName} like '%'||#{searchWord}||'%'
+				</otherwise>
+			</choose>
+		</if>
 	</select>
 </mapper>
